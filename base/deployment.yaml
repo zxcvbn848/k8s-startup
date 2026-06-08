@@ -45,7 +45,8 @@ spec:
             periodSeconds: 15
           securityContext:
             allowPrivilegeEscalation: false
-            runAsNonRoot: false
-            capabilities:
-              drop:
-                - ALL
+            # 換成你自己的應用（非 root 監聽 >1024 埠）後，建議改用更嚴格設定：
+            #   runAsNonRoot: true
+            #   capabilities:
+            #     drop: [ALL]
+            # 註：nginx 官方映像以 root 啟動並需 CHOWN/SETUID/SETGID，故 base 不 drop ALL。

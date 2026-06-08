@@ -9,8 +9,10 @@ resources:
   - service.yaml
   - ingress.yaml
 
-commonLabels:
-  app.kubernetes.io/part-of: web
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: web
+    includeSelectors: true
 
 images:
   - name: nginx
