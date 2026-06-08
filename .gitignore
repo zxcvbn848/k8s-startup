@@ -1,0 +1,15 @@
+# 敏感資訊與本地檔案，絕對不加入版控
+*.secret.yaml
+secrets/
+.env
+.env.*
+!.env.example
+
+# kubeconfig 本地副本
+kubeconfig
+*.kubeconfig
+
+# 編輯器與系統檔案
+.DS_Store
+.idea/
+.vscode/

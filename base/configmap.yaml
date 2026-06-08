@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-config
+data:
+  # 非敏感設定放這裡；敏感資訊請改用 Secret，且不要加入版控
+  APP_ENV: "base"
+  TZ: "Asia/Shanghai"

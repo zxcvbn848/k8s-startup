@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# base 為共用基礎層，實際部署請使用 overlays/dev 或 overlays/prod
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: web
+
+images:
+  - name: nginx
+    newName: nginx
+    newTag: 1.27-alpine
